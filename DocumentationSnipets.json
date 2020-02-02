@@ -1,0 +1,36 @@
+{
+	"param": {
+		"prefix": "<param>",
+		"body": ["/// <param name=\"${name}\">${description}</param>"],
+		"description": "Use the <param> tag to describe a method's parameters. "
+	},
+	"remark": {
+		"prefix": "<remarks>",
+		"body": ["/// <remarks>",
+			"\/// ${description}",
+			"\/// </remarks>"],
+		"description": "The <remarks> tag supplements the information about types or members that the <summary> tag provides."
+	},
+	"returns": {
+		"prefix": "<returns>",
+		"body": ["/// <returns>${description}</returns>"],
+		"description": "The <returns> tag describes the return value of a method declaration. "
+	},
+	"see": {
+		"prefix": "<see>",
+		"body": ["/// <see cref=\"${member}\"/>"],
+		"description": "The <see> tag lets you create a clickable link to a documentation page for another code element."
+	},
+	"summary": {
+		"prefix": "<summary>",
+		"body": ["/// <summary>",
+		"\/// ${description}",
+		"\/// </summary>"],
+		"description": "The <summary> tag adds brief information about a type or member."
+	},	
+	"value": {
+		"prefix": "<value>",
+		"body": ["/// <value>${description}</value>"],
+		"description": "The <value> tag is similar to the <returns> tag, except that you use it for properties. "
+	}
+}
