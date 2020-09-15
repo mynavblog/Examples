@@ -21,15 +21,15 @@ codeunit 50100 "MNB Assisted Setup Mgt."
         CurrentGlobalLanguage := GlobalLanguage();
 
         //Group: MNB My Extension Group
-        AssistedSetup.Add(GetAppId(), Page::"MNB Extension Setup", ExtensionSetupLbl, AssistedSetupGroup::"MNB My Extension Group",
+        AssistedSetup.Add(GetAppId(), Page::"MNB Best Extension Wizard", ExtensionSetupLbl, AssistedSetupGroup::"MNB My Extension Group",
             StrSubstNo(YouTubeVideoLinkTxt, '2jqzveL_Nu4'), VideoCategory::"MNB My Extension Videos",
             ExtensionSetupHelpUrlTxt, ExtensionSetupTxt);
 
         GlobalLanguage(1033);
-        AssistedSetup.AddTranslation(Page::"MNB Extension Setup", 1033, ExtensionSetupLbl);
+        AssistedSetup.AddTranslation(Page::"MNB Best Extension Wizard", 1033, ExtensionSetupLbl);
         GlobalLanguage(CurrentGlobalLanguage);
 
-        //UpdateStatus();
+        UpdateStatus();
     end;
 
     procedure UpdateStatus()
@@ -39,6 +39,8 @@ codeunit 50100 "MNB Assisted Setup Mgt."
     begin
         if ExtensionSetup.Get() and (ExtensionSetup."Document Nos." <> '') then
             AssistedSetup.Complete(Page::"MNB Extension Setup");
+        if ExtensionSetup.Get() and (ExtensionSetup."Document Nos." <> '') then
+            AssistedSetup.Complete(Page::"MNB Best Extension Wizard");
     end;
 
     local procedure GetAppId(): Guid
